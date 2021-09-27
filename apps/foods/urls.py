@@ -14,6 +14,6 @@ foods_details = FoodsViewSet.as_view({
 })
 
 urlpatterns = [
-    url(r'^$', Foods_list, name='foods_lists '),
-    url(r'^(?P<pk>\d+)/$', Foods_details, name='foods_details '),
+    url(r'^$', foods_list, name='foods_lists '),
+    url(r'^(?P<pk>\d+)/$', foods_details, name='foods_details '),
 ]

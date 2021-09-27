@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'drf_query_filter',
-    'apps.users',
+    # 'apps.users',
     'apps.restaurants',
     'apps.foods'
 ]
@@ -42,10 +42,10 @@ REST_FRAMEWORK = {
 REST_KNOX = {
     'AUTH_HEADER_PREFIX': 'bearer',
     'AUTO_REFRESH': False,
-    'USER_SERIALIZER': 'apps.users.serializers.UserSerializer'
+    # 'USER_SERIALIZER': 'apps.users.serializers.UserSerializer'
 }
 
-AUTH_USER_MODEL = 'users.User'
+# AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -6,9 +6,9 @@ from knox.views import LogoutView, LogoutAllView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/login/', LoginCustomView.as_view(), name='knox_custom_login'),
-    path('auth/logout/', LogoutView.as_view(), name='knox_logout'),
-    path('auth/logoutall/', LogoutAllView.as_view(), name='knox_logoutall'),
+    path('auth/login/', LoginCustomView.as_view()),
+    path('auth/logout/', LogoutView.as_view()),
+    path('auth/logoutall/', LogoutAllView.as_view()),
     path('restaurants/', include('apps.restaurants.urls')),
     path('foods/', include('apps.foods.urls'))
 ]

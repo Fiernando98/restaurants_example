@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'drf_query_filter',
+    'apps.users',
     'apps.restaurants',
     'apps.foods'
 ]
@@ -40,9 +41,11 @@ REST_FRAMEWORK = {
 
 REST_KNOX = {
     'AUTH_HEADER_PREFIX': 'bearer',
-    'AUTO_REFRESH': True,
+    'AUTO_REFRESH': False,
     'USER_SERIALIZER': 'apps.users.serializers.UserSerializer'
 }
+
+AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,3 +127,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# RESET PASSWORD URL
+RESET_PASSWORD_URL = getattr(SECRET_KEY, 'RESET_PASSWORD_URL', '%s')

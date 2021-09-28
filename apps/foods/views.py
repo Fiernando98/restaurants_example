@@ -11,6 +11,6 @@ class FoodsViewSet(viewsets.ModelViewSet):
     queryset = model.objects.all()
 
     query_params = [
-        fields.Field('restaurant', 'restaurant__icontains'),
+        fields.Field('restaurant', 'restaurant'),
         fields.Field('name', 'name__icontains')
     ]
